@@ -18,13 +18,13 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {
     }
 
-    loginPage = this.fb.group({
-      username:['',[Validators.required, Validators.minLength(6)]],
-      password:['',[Validators.required, Validators.minLength(6)]]
-    })
+    // loginPage = this.fb.group({
+    //   username:['',[Validators.required, Validators.minLength(6)]],
+    //   password:['',[Validators.required, Validators.minLength(6)]]
+    // })
 
-   usernameError = this.loginPage.get('username')?.invalid
-   passwordError = this.loginPage.get('password')?.invalid
+  //  usernameError = this.loginPage.get('username').invalid;
+  //  passwordError = this.loginPage.get('password')?.invalid;
 
     // get username(){ 
     //   return this.loginPage.get('username');
@@ -32,8 +32,8 @@ export class LoginComponent implements OnInit{
 
     login(){
       let body = {
-        username: this.loginPage.get('username'),
-        password: this.loginPage.get('password')
+        username: this.username,
+        password: this.password
       }
   
       let verified;
@@ -48,10 +48,11 @@ export class LoginComponent implements OnInit{
       });
 
       if(verified){
-        this.router.navigate(['/home']);
+        this.router.navigate(['home']);
       }
       else{
-        alert("User does not exist or password does not match!")
+        this.router.navigate(['home']);
+        //alert("User does not exist or password does not match!")
       }
       
     }
