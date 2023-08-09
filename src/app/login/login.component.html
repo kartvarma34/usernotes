@@ -1,0 +1,16 @@
+<div>
+    <h2>Login</h2>
+    <form [formGroup]="loginPage" (ngSubmit)="login()">
+        <label>Username:</label><br>
+        <input formControlName="username">
+        <span style="color:red" *ngIf="usernameError"><br>*Username should have atleast 6 characters</span>
+        <br>
+
+        <label>Password:</label><br>
+        <input formControlName="password">
+        <span style="color:red" *ngIf="passwordError"><br>*Password should have atleast 6 characters</span>
+        <br>
+
+        <button type="submit" [disabled]="loginPage.invalid">LOGIN</button>
+    </form>
+</div>
