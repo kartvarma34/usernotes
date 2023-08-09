@@ -23,8 +23,8 @@ export class LoginComponent implements OnInit{
       password:['',[Validators.required, Validators.minLength(6)]]
     })
 
-    usernameError = this.loginPage.get('username')?.invalid
-    passwordError = this.loginPage.get('password')?.invalid
+   usernameError = this.loginPage.get('username')?.invalid
+   passwordError = this.loginPage.get('password')?.invalid
 
     // get username(){ 
     //   return this.loginPage.get('username');
