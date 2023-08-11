@@ -17,4 +17,11 @@ export class DataService {
     return this.http.get('http://localhost:3000/users');
   }
 
+  getNotes(): Observable<any>{
+    return this.http.get('http://localhost:3000/notes');
+  }
+
+  addNote(note: any): Observable<any>{
+    return this.http.post('http://localhost:3000/notes', note);
+  }
 }

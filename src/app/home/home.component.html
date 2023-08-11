@@ -1,1 +1,17 @@
-<p>home works!</p>
+<button routerLink="/add-note">Add Note</button>
+<ul>
+    <p>Recent Notes</p>
+    <li *ngFor="let i of notes">
+        <p>{{i.title}}</p>
+        <p>{{i.body}}</p>
+        <button routerLink="/modify-note/{{i.noteID}}">Modify Note</button>
+    </li>
+</ul>
+
+<ul>
+    <p>Favorite Notes</p>
+    <li *ngFor="let i of favs">
+        <p>{{i.title}}</p>
+        <p>{{i.body}}</p>
+    </li>
+</ul>

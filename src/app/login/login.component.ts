@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit{
   
       this.server.login().subscribe((data)=>{
         for(let i=0; i<data.length; i++){
-          if(body.username === data[i].username && body.password === data[i].password){
+          if(this.username === data[i].username && this.password === data[i].password){
             verified = true;
           }
         }

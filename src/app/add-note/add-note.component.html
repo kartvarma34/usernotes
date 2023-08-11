@@ -1,0 +1,18 @@
+<div>
+    <h2>Add Note</h2>
+    <form [formGroup]="noteForm" (ngSubmit)="addNote()">
+      <div>
+        <label>Title:</label>
+        <input type="text" formControlName="title">
+      </div>
+      <div>
+        <label>Body:</label>
+        <textarea formControlName="body"></textarea>
+      </div>
+      <div>
+        <label>Favorite:</label>
+        <input type="checkbox" formControlName="favorite">
+      </div>
+      <button type="submit" [disabled]="noteForm.invalid">Add Note</button>
+    </form>
+  </div>
