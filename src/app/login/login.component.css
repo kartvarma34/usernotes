@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: "DM Sans", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fdf4ef;
+  }
+
+.container {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .btn {
+    font-size: 12px;
+    padding: 4px 12px;
+    border-radius: 4px;
+    color: #fff;
+    background-color: #663a1f;
+    border: 1px solid #663a1f;
+  }
+
+  .btn:hover {
+    color: #663a1f;
+    background-color: #fff;
+  }

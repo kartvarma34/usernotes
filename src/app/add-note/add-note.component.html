@@ -5,14 +5,17 @@
         <label>Title:</label>
         <input type="text" formControlName="title">
       </div>
+      <br>
       <div>
         <label>Body:</label>
         <textarea formControlName="body"></textarea>
       </div>
+      <br>
       <div>
         <label>Favorite:</label>
         <input type="checkbox" formControlName="favorite">
       </div>
+      <br>
       <button type="submit" [disabled]="noteForm.invalid">Add Note</button>
     </form>
   </div>

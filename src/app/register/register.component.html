@@ -1,0 +1,33 @@
+<div>
+    <h2>New User Registeration</h2>
+    <form (ngSubmit)="register()">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" [(ngModel)]="username" required minlength="6" #name="ngModel">
+        <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert" style="color:red">
+            <div *ngIf="name.errors?.['required']">*Username is required.</div>
+            <div *ngIf="name.errors?.['minlength']">*Username must be at least 6 characters long.</div>
+        </div>
+        <br>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" [(ngModel)]="password" required minlength="6"
+            #pass="ngModel">
+        <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert" style="color:red">
+            <div *ngIf="pass.errors?.['required']">*Password is required.</div>
+            <div *ngIf="pass.errors?.['minlength']">*Password must be at least 6 characters long.</div>
+        </div>
+        <br>
+        <br>
+        <label for="confPassword">Confirm Password:</label>
+        <input type="password" id="confPassword" name="confPassword" [(ngModel)]="confPassword" required minlength="6"
+            #conf="ngModel" (keyup)="validatePassword()">
+        <div *ngIf="passwordsMatch === false" style="color:red">*Passwords do not match.</div>
+        <div *ngIf="conf.invalid && (conf.dirty || conf.touched)" class="alert" style="color:red">
+            <div *ngIf="conf.errors?.['required']">*Re-Entering Password is required.</div>
+            <div *ngIf="conf.errors?.['minlength']">*Password must be at least 6 characters long.</div>
+        </div>
+        <br>
+        <br>
+        <button type="submit" [disabled]="passwordsMatch === false">Register</button>
+    </form>
+</div>

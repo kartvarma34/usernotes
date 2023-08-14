@@ -2,33 +2,43 @@
   "users": [
     {
       "username": "asdasd",
-      "password": "asdasd"
+      "password": "asdasd",
+      "userID": 100,
+      "id": 1
     }
   ],
   "notes": [
     {
-      "title": "title 8",
-      "body": "body 8",
-      "favorite": false,
-      "dateCreated": "8/10/2023",
-      "noteID": 104,
-      "id": 8
-    },
-    {
-      "title": "title 9",
-      "body": "body 9",
-      "favorite": true,
-      "dateCreated": "8/10/2023",
-      "noteID": 544,
-      "id": 9
-    },
-    {
       "title": "title 10",
       "body": "body 10",
-      "favorite": true,
+      "favorite": false,
       "dateCreated": "8/10/2023",
       "noteID": 921,
       "id": 10
+    },
+    {
+      "title": "Title 11",
+      "body": "Body 11",
+      "favorite": true,
+      "dateCreated": "8/14/2023",
+      "noteID": 226,
+      "id": 11
+    },
+    {
+      "title": "title 12",
+      "body": "Body of title 12",
+      "favorite": true,
+      "dateCreated": "8/14/2023",
+      "noteID": 348,
+      "id": 12
+    },
+    {
+      "title": "Title 13",
+      "body": "Body of Title 13",
+      "favorite": false,
+      "dateCreated": "8/14/2023",
+      "noteID": 651,
+      "id": 13
     }
   ]
 }

@@ -1,41 +1,26 @@
-<!-- <div>
-    <h2>Login</h2>
-    <form [formGroup]="loginPage" (ngSubmit)="login()">
-        <label>Username:</label><br>
-        <input formControlName="username">
-        <span style="color:red" *ngIf="usernameError && loginPage.get('username')?.touched"><br>*Username should have atleast 6 characters</span>
-        <br>
-
-        <label>Password:</label><br>
-        <input formControlName="password">
-        <span style="color:red" *ngIf="passwordError && loginPage.get('password')?.touched"><br>*Password should have atleast 6 characters</span>
-        <br>
-
-        <button type="submit" [disabled]="loginPage.invalid">LOGIN</button>
-    </form>
-</div> -->
-
 <div>
-    <h2>Login</h2>
-    <form (ngSubmit)="login()">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" [(ngModel)]="username" required minlength="6" #name="ngModel">
-      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert" style="color:red">
-        <div *ngIf="name.errors?.['required']">*Username is required.</div>
-        <div *ngIf="name.errors?.['minlength']">*Username must be at least 6 characters long.</div>
-      </div>
-      <br>
-      <br>
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" [(ngModel)]="password" required minlength="6" #pass="ngModel">
-      <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert" style="color:red">
-        <div *ngIf="pass.errors?.['required']">*Password is required.</div>
-        <div *ngIf="pass.errors?.['minlength']">*Password must be at least 6 characters long.</div>
-      </div>
-      <br>
-      <br>
+  <h2>Login</h2>
+  <form (ngSubmit)="login()">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" [(ngModel)]="username" required minlength="6" #name="ngModel">
+    <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert" style="color:red">
+      <div *ngIf="name.errors?.['required']">*Username is required.</div>
+      <div *ngIf="name.errors?.['minlength']">*Username must be at least 6 characters long.</div>
+    </div>
+    <br>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" [(ngModel)]="password" required minlength="6" #pass="ngModel">
+    <div *ngIf="pass.invalid && (pass.dirty || pass.touched)" class="alert" style="color:red">
+      <div *ngIf="pass.errors?.['required']">*Password is required.</div>
+      <div *ngIf="pass.errors?.['minlength']">*Password must be at least 6 characters long.</div>
+    </div>
+    <br>
+    <br>
+    <!-- <button type="submit" [disabled]="name.invalid || pass.invalid">Login</button> -->
+    <div class="container">
       <button type="submit" [disabled]="name.invalid || pass.invalid">Login</button>
-      <!-- <button (click)="goToRegister()">Register</button> -->
-    </form>
-  </div>
-  
+      <button (click)="goToReg()" class="btn">New User? Register Here!!</button>
+    </div>
+  </form>
+</div>

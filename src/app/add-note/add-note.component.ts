@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,31 +8,32 @@ import { Router } from '@angular/router';
   templateUrl: './add-note.component.html',
   styleUrls: ['./add-note.component.css']
 })
+
 export class AddNoteComponent {
 
   noteForm: FormGroup;
 
-  constructor(private dataService: DataService, private fb: FormBuilder, private router:Router,) {
+  constructor(private dataService: DataService, private fb: FormBuilder, private router: Router,) {
     this.noteForm = this.fb.group({
-      title:['',Validators.required],
-      body:['',Validators.required],
-      favorite:[false,Validators.required]
+      title: ['', Validators.required],
+      body: ['', Validators.required],
+      favorite: [false, Validators.required]
     });
   }
 
-  addNote(){
-    if (this.noteForm.invalid){
+  addNote() {
+    if (this.noteForm.invalid) {
       return;
     }
     const newNote = {
-      title: this.noteForm.value.title, 
-      body: this.noteForm.value.body, 
+      title: this.noteForm.value.title,
+      body: this.noteForm.value.body,
       favorite: this.noteForm.value.favorite,
       dateCreated: new Date().toLocaleDateString(),
-      noteID: Math.floor(Math.random()*1000) 
+      noteID: Math.floor(Math.random() * 1000)
     }
-    this.dataService.addNote(newNote).subscribe(response=> {
-      console.log("Note Added",response);
+    this.dataService.addNote(newNote).subscribe(response => {
+      console.log("Note Added", response);
       this.router.navigate(['/home']);
     })
   }

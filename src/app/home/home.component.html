@@ -1,17 +1,93 @@
 <button routerLink="/add-note">Add Note</button>
-<ul>
-    <p>Recent Notes</p>
-    <li *ngFor="let i of notes">
-        <p>{{i.title}}</p>
-        <p>{{i.body}}</p>
-        <button routerLink="/modify-note/{{i.noteID}}">Modify Note</button>
-    </li>
-</ul>
 
-<ul>
-    <p>Favorite Notes</p>
-    <li *ngFor="let i of favs">
-        <p>{{i.title}}</p>
-        <p>{{i.body}}</p>
-    </li>
-</ul>
+<div class="report-container">
+    <div class="report-header">
+        <h1 class="recent-Articles">Recent Notes</h1>
+        <!-- <button class="view">View All</button> -->
+    </div>
+
+    <div class="report-body">
+        <div class="report-topic-heading">
+            <h3 class="t-op">Title of Note</h3>
+            <h3 class="t-op">Content of Note</h3>
+            <h3 class="t-op">Date Created</h3>
+            <h3 class="t-op">NoteID</h3>
+        </div>
+
+        <ul>
+            <li *ngFor="let i of notes">
+                <div class="items">
+                    <div class="item1">
+                        <h3 class="t-op-nextlvl">{{i.title}}</h3>
+                        <h3 class="t-op-nextlvl">{{i.body}}</h3>
+                        <h3 class="t-op-nextlvl">{{i.dateCreated}}</h3>
+                        <h3 class="t-op-nextlvl">{{i.noteID}}</h3>
+                        <!-- <button routerLink="/modify-note/{{i.noteID}}">Modify Note</button> -->
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="report-container2">
+    <div class="report-header">
+        <h1 class="recent-Articles">Fav Notes</h1>
+        <!-- <button class="view">View All</button> -->
+    </div>
+
+    <div class="report-body">
+        <div class="report-topic-heading">
+            <h3 class="t-op">Title of Note</h3>
+            <h3 class="t-op">Content of Note</h3>
+            <h3 class="t-op">Date Created</h3>
+            <h3 class="t-op">NoteID</h3>
+        </div>
+
+        <ul>
+            <li *ngFor="let i of favs">
+                <div class="items">
+                    <div class="item1">
+                        <h3 class="t-op-nextlvl">{{i.title}}</h3>
+                        <h3 class="t-op-nextlvl">{{i.body}}</h3>
+                        <h3 class="t-op-nextlvl">{{i.dateCreated}}</h3>
+                        <h3 class="t-op-nextlvl">{{i.noteID}}</h3>
+                        <!-- <button routerLink="/modify-note/{{i.noteID}}">Modify Note</button> -->
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="report-container3">
+    <div class="report-header">
+        <h1 class="recent-Articles">All Notes</h1>
+        <!-- <button class="view">View All</button> -->
+    </div>
+
+    <div class="report-body">
+        <div class="report-topic-heading">
+            <h3 class="t-op">Title of Note</h3>
+            <h3 class="t-op">Content of Note</h3>
+            <h3 class="t-op">Date Created</h3>
+            <h3 class="t-op">NoteID</h3>
+            <h3 class="t-op">Action</h3>
+        </div>
+
+        <ul>
+            <li *ngFor="let i of allnotes">
+                <div class="items">
+                    <div class="item1">
+                        <h3 class="t-op-nextlvl">{{i.title}}</h3>
+                        <h3 class="t-op-nextlvl">{{i.body}}</h3>
+                        <h3 class="t-op-nextlvl">{{i.dateCreated}}</h3>
+                        <h3 class="t-op-nextlvl">{{i.noteID}}</h3>
+                        <!-- <button routerLink="/del-note/{{i.noteID}}">Modify</button> -->
+                        <button (click)="delNote(i.id)">Delete</button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
